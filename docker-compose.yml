@@ -1,0 +1,33 @@
+services: 
+  node_backend:
+    container_name: corserva_container
+    image: corserva_container:0.0.4
+    build: 
+      context: .
+    ports:
+      - "3001:3001"
+    environment: 
+      - EXTERNAL_PORT=3001
+      - PG_DATABASE=corserva_db
+      - PG_USER=admin
+      - PG_PASSWORD=12345
+      - PG_HOST=node_db
+    depends_on: 
+      - node_db
+  node_db: 
+    container_name: node_db
+    image: "postgres:12"
+    ports:
+      - "5432:5432"
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=corserva_db
+    volumes:
+      - nps_data:/var/lib/postgresql/data
+
+volumes:
+  nps_data: {}
+
+  
+    

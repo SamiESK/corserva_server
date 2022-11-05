@@ -1,0 +1,26 @@
+{
+  "name": "corserva_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamiESK/corserva_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamiESK/corserva_server/issues"
+  },
+  "homepage": "https://github.com/SamiESK/corserva_server#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.3",
+    "uuid": "^9.0.0"
+  }
+}
