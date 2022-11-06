@@ -1,7 +1,7 @@
 const express = require('express');
 
 const sequelize = require('./util/database');
-const User = require('./models/users');
+const Sale = require('./models/sales');
 
 const app = express();
 
@@ -13,17 +13,15 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET','POST','PUT','DELETE');
   next();
 })
-
-app.use('/dev', require('./routes/dev'));
-app.use('/users', require('./routes/users'));
+app.use('/sales', require('./routes/sales'));
 
 (async () =>{
   try {
     await sequelize.sync(
       {force: false}
     );
-    console.log("test");
     app.listen(process.env.EXTERNAL_PORT || 3001);
+    console.log("App listening to port " + process.env.EXTERNAL_PORT);
   } catch (error) {
     console.error(error);
   }

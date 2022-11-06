@@ -1,26 +1,26 @@
 const Sequelize = require('sequelize');
 const db = require('../util/database');
 
-const User = db.define('users',{
+const Sale = db.define('sales',{
   uuid: {
     type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV4,
+    defaultValue: Sequelize.UUIDV1,
     allowNull: false,
     primaryKey: true
   },
-  username: {
+  productName: {
     type: Sequelize.STRING,
     allowNull: false,
     unique: true
   },
-  email: {
+  description: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  password: {
-    type: Sequelize.STRING,
+  price: {
+    type: Sequelize.INTEGER,
     allowNull: false
   }
 });
 
-module.exports = User;
+module.exports = Sale;

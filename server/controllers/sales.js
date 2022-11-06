@@ -1,8 +1,8 @@
-const User = require('../models/users');
+const Sale = require('../models/sales');
 
 exports.getAll = async (req, res, next) => {
   try {
-    const ALL = await User.findAll();
+    const ALL = await Sale.findAll();
     return res.status(200).json(ALL);
   } catch (error) {
     return res.status(500).json(error);
@@ -11,8 +11,8 @@ exports.getAll = async (req, res, next) => {
 
 exports.getOne = async (req, res, next) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    return res.status(200).json(user);
+    const sale = await Sale.findByPk(req.params.uuid);
+    return res.status(200).json(sale);
   } catch (error) {
     return res.status(500).json(error);
   }
@@ -21,15 +21,15 @@ exports.getOne = async (req, res, next) => {
 exports.createOne = async (req, res, next) => {
   try {
     const USER_MODEL = {
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
+      productName: req.body.productName,
+      description: req.body.description,
+      price: req.body.price,
     };
 
     try {
-      const user = await User.create(USER_MODEL);
-      console.log('User created');
-      return res.status(201).json(user);
+      const sale = await Sale.create(USER_MODEL);
+      console.log('Sale created');
+      return res.status(201).json(sale);
     } catch (error) {
       return res.status(500).json(error);
     }
@@ -41,14 +41,14 @@ exports.createOne = async (req, res, next) => {
 exports.updateOne = async (req, res, next) => {
   try {
     const USER_MODEL = {
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
+      productName: req.body.productName,
+      description: req.body.description,
+      price: req.body.price,
     };
 
     try {
-      const user = await User.update(USER_MODEL, { where: { id: req.params.id } });
-      return res.status(200).json(user);
+      const sale = await Sale.update(USER_MODEL, { where: { uuid: req.params.uuid } });
+      return res.status(200).json(sale);
     } catch (error) {}
   } catch (error) {
     return res.status(500).json(error);
@@ -57,8 +57,8 @@ exports.updateOne = async (req, res, next) => {
 
 exports.deleteOne = async (req, res, next) => {
   try {
-    const user = await User.destroy({ where: { id: req.params.id } });
-    return res.status(200).json(user);
+    const sale = await Sale.destroy({ where: { uuid: req.params.uuid } });
+    return res.status(200).json(sale);
   } catch (error) {
     return res.status(500).json(error);
   }
