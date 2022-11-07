@@ -8,4 +8,4 @@ To run this repository, you must have the following software installed in your m
 To configure this directory to your machine, cd into the root directory of the folder & run the following commands. 
 
 1. docker compose build
-2. docker compose up (you can run ``docker compose up -d`` to detach images logs from terminal)
+2. docker compose up (you can run `docker compose up -d` to detach images logs from terminal)
