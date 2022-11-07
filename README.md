@@ -1,9 +1,9 @@
 This repository houses the backend services for Corserva's challenge application.
 
 To run this repository, you must have the following software installed in your machine. 
-  - `docker
-  - `npm
-  - `node
+  - `docker`
+  - `npm`
+  - `node`
 
 To configure this directory to your machine, cd into the root directory of the folder & run the following commands. 
 
