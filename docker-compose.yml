@@ -28,6 +28,3 @@ services:
 
 volumes:
   nps_data: {}
-
-  
-    
