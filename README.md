@@ -11,3 +11,5 @@ To configure this directory to your machine, cd into the root directory of the f
 2. `docker compose up` (you can run `docker compose up -d` to detach images logs from terminal)
 
 The server will be initialized to `http://localhost:3001` & should now be able to view the newly created containers via the Docker desktop application.
+
+To shutdown containers, run `docker compose down`
