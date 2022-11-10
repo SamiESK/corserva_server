@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "wesbos"
+  ],
+  "rules": {
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "999.999.999"
+    }
+  }
+}

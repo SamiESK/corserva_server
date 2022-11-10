@@ -1,0 +1,16 @@
+{
+    "sales": [
+      {
+        "uuid": "aebd31f5-2594-484a-8afb-3d7b3646d620",
+        "productName": "Product Name",
+        "description": "Product Description",
+        "price": 100
+      },
+      {
+        "uuid": "db25922a-51d7-41c3-9973-35c5d7a5f3a4",
+        "productName": "Second Product Name",
+        "description": "Second Product Description",
+        "price": 150
+    }
+    ]
+  }
