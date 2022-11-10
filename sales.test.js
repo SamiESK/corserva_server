@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const Sale = require('./server/models/sales');
 const salesController = require('./server/controllers/sales');
-const jest = require('jest');
+
 
 // Test get all sales
 const SalesFindAllMock = async () => {
@@ -28,7 +28,7 @@ const SalesFindAllMock = async () => {
 
 describe('Get all sales requests', () => {
     it('should return all sales', async () => {
-        // const salesFindAllSpy = jest.spyOn(Sale, 'findAll')
+        const salesFindAllSpy = jest.spyOn(Sale, 'findAll')
         // .and.returnValue(
         //     [
         //         {
@@ -70,7 +70,7 @@ describe('Get all sales requests', () => {
             },
         ];
         await salesController.getAll(req, res, next);
-        // expect(salesFindAllSpy).toHaveBeenCalled();
+        expect(salesFindAllSpy).toHaveBeenCalled();
         expect(res.json).toBeCalledWith(expectedData);
     });
 });
